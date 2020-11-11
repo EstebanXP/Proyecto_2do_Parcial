@@ -17,7 +17,7 @@ const routes = [
   },
   {
     path: '/edit/:id',
-    name: 'EditarLibro',
+    name: 'EditarL',
     component: EditarL
   },
   {

@@ -1,13 +1,68 @@
 <template>
 <div>
     <h1>Creador de libros</h1>
-    {{listaDeLibros}}
+    <form @submit.prevent="addLibro">
+        <p>
+            Inserta el nombre del nuevo libro: <input type="text" v-model="titulo">
+        </p>
+
+        <p>
+            Inserta el nombre del autor: <input type="text" v-model="nombreAutor">
+        </p>
+
+        <p>
+            Inserta la clasificacion del nuevo libro: <input type="text" v-model="clasificacion">
+        </p>
+
+        <p>
+            Inserta la editorial del nuevo libro: <input type="text" v-model="editorial">
+        </p>
+
+        <p>
+            Inserta el ID del nuevo libro: <input type="text" v-model="idLibro">
+        </p>
+        <button type="submit">Enviar</button>
+
+    </form>
 </div>
 </template>
 
 <script>
+import {
+    bdd
+} from '../firebase.js'
+//import {
+//   router
+//} from '../router'
 export default {
     name: "CrearL",
+    data() {
+        return {
+            nombreAutor: "",
+            clasificacion: "",
+            editorial: "",
+            idLibro: "",
+            titulo: "",
 
+        }
+    },
+    methods: {
+        async addLibro() {
+            await bdd.collection('Libros').add({
+                autor: this.nombreAutor,
+                clasificacion: this.clasificacion,
+                editorial: this.editorial,
+                id: this.idLibro,
+                titulo: this.titulo
+            })
+            alert("¡Libro Agregado!");
+            this.nombreAutor = "";
+            this.clasificacion = "";
+            this.editorial = "";
+            this.idLibro = "";
+            this.titulo = "";
+            //router.push("/")
+        }
+    }
 }
 </script>
