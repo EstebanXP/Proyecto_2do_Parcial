@@ -6,9 +6,10 @@
         <li v-for="libros in librosArray" :key="libros.id">
             Titulo: "{{libros.titulo}}", Autor: {{libros.autor}} -
             Clasificacion: {{libros.clasificacion}} - Editorial: {{libros.editorial}}
-            ID: {{libros.id}}
+            ID: {{libros.idlibro}}
             -
-            <router-link :to="{ name: 'EditarL', params: {id: libros.id}}"> Editar Libro</router-link>
+
+            <router-link :to="{ name: 'EditarL', params: { id: libros.id}}"> Editar Libro</router-link>
         </li>
     </ul>
 

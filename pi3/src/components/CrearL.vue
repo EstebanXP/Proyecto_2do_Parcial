@@ -19,7 +19,7 @@
         </p>
 
         <p>
-            Inserta el ID del nuevo libro: <input type="text" v-model="idLibro">
+            Inserta el ID del nuevo libro: <input type="text" v-model="idLibro1">
         </p>
         <button type="submit">Enviar</button>
 
@@ -41,7 +41,7 @@ export default {
             nombreAutor: "",
             clasificacion: "",
             editorial: "",
-            idLibro: "",
+            idLibro1: "",
             titulo: "",
 
         }
@@ -52,14 +52,14 @@ export default {
                 autor: this.nombreAutor,
                 clasificacion: this.clasificacion,
                 editorial: this.editorial,
-                id: this.idLibro,
+                idlibro: this.idLibro1,
                 titulo: this.titulo
             })
             alert("¡Libro Agregado!");
             this.nombreAutor = "";
             this.clasificacion = "";
             this.editorial = "";
-            this.idLibro = "";
+            this.idLibro1 = "";
             this.titulo = "";
             //router.push("/")
         }

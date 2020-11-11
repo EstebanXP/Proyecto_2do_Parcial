@@ -19,7 +19,7 @@
         </p>
 
         <p>
-            Inserta el ID del nuevo libro: <input type="text" v-model="idLibro">
+            Inserta el ID del nuevo libro: <input type="text" v-model="idLibro1">
         </p>
         <button type="submit">Enviar</button>
 
@@ -41,7 +41,7 @@ export default {
             nombreAutor: "",
             clasificacion: "",
             editorial: "",
-            idLibro: "",
+            idLibro1: "",
             titulo: "",
         }
     },
@@ -51,29 +51,26 @@ export default {
     methods: {
         async getLibro() {
             const id = this.$route.params.id;
-            console.log(id + "g");
             const data = await bdd.collection('Libros').doc(id).get();
-
             const lib = data.data();
-            console.log(lib.autor);
 
-            //this.nombreAutor = lib.autor;
-            //this.clasificacion = lib.clasificacion;
-            //this.editorial = lib.editorial;
-            //this.idLibro = lib.id;
-            //this.titulo = lib.titulo;
+            this.nombreAutor = lib.autor;
+            this.clasificacion = lib.clasificacion;
+            this.editorial = lib.editorial;
+            this.idLibro1 = lib.idlibro;
+            this.titulo = lib.titulo;
         },
         async addActualizacion() {
             const id = this.$route.params.id;
             await bdd.collection("Libros").doc(id).set({
-                //autor: this.nombreAutor,
-                //clasificacion: this.clasificacion,
-                // editorial: this.editorial,
-                //id: this.idLibro,
-                // titulo: this.titulo,
+                autor: this.nombreAutor,
+                clasificacion: this.clasificacion,
+                editorial: this.editorial,
+                idlibro: this.idLibro1,
+                titulo: this.titulo,
 
             })
-
+            alert("Libro actualizado!");
         },
     }
 }
