@@ -7,19 +7,19 @@
             <tbody>
                 <li v-for="libros in librosArray" :key="libros.id">
                     <td>
-                        Titulo: "{{libros.titulo}}" -
+                        <b>Titulo:</b> "{{libros.titulo}}"
                     </td>
                     <td>
-                        Autor: {{libros.autor}} -
+                        <b>Autor:</b> "{{libros.autor}}"
                     </td>
                     <td>
-                        Clasificacion: {{libros.clasificacion}} -
+                        <b>Clasificacion:</b> "{{libros.clasificacion}}"
                     </td>
                     <td>
-                        Editorial: {{libros.editorial}} -
+                        <b>Editorial:</b> "{{libros.editorial}}"
                     </td>
                     <td>
-                        ID: {{libros.idlibro}} -
+                        <b>ID:</b> "{{libros.idlibro}}"
                     </td>
                     <router-link :to="{ name: 'EditarL', params: { id: libros.id}}"> Editar Libro</router-link>
                     <hr>
