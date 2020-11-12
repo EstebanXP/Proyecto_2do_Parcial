@@ -23,8 +23,9 @@
                 Inserta el ID del nuevo libro: <input type="text" v-model="idLibro1">
             </p>
             <button type="submit">Enviar</button>
-            <button type="submit">Eliminar Libro</button>
+
         </form>
+        <button @click="borrarLibro" type="submit">Eliminar Libro</button>
     </div>
 </body>
 </template>
@@ -74,6 +75,16 @@ export default {
 
             })
             alert("Libro actualizado!");
+        },
+        async borrarLibro() {
+            const id = this.$route.params.id;
+            await bdd.collection("Libros").doc(id).delete();
+            this.nombreAutor = "";
+            this.clasificacion = "";
+            this.editorial = "";
+            this.idLibro1 = "";
+            this.titulo = "";
+            alert("Libro borrado!");
         },
     }
 }
