@@ -1,30 +1,32 @@
 <template>
-<div>
-    <h1>Actualizar libros</h1>
-    <form @submit.prevent="addActualizacion">
-        <p>
-            Inserta el nombre del nuevo libro: <input type="text" v-model="titulo">
-        </p>
+<body>
+    <div>
+        <h1>Actualizar libros</h1>
+        <form @submit.prevent="addActualizacion">
+            <p>
+                Inserta el nombre del nuevo libro: <input type="text" v-model="titulo">
+            </p>
 
-        <p>
-            Inserta el nombre del autor: <input type="text" v-model="nombreAutor">
-        </p>
+            <p>
+                Inserta el nombre del autor: <input type="text" v-model="nombreAutor">
+            </p>
 
-        <p>
-            Inserta la clasificacion del nuevo libro: <input type="text" v-model="clasificacion">
-        </p>
+            <p>
+                Inserta la clasificacion del nuevo libro: <input type="text" v-model="clasificacion">
+            </p>
 
-        <p>
-            Inserta la editorial del nuevo libro: <input type="text" v-model="editorial">
-        </p>
+            <p>
+                Inserta la editorial del nuevo libro: <input type="text" v-model="editorial">
+            </p>
 
-        <p>
-            Inserta el ID del nuevo libro: <input type="text" v-model="idLibro1">
-        </p>
-        <button type="submit">Enviar</button>
-
-    </form>
-</div>
+            <p>
+                Inserta el ID del nuevo libro: <input type="text" v-model="idLibro1">
+            </p>
+            <button type="submit">Enviar</button>
+            <button type="submit">Eliminar Libro</button>
+        </form>
+    </div>
+</body>
 </template>
 
 <script>
@@ -43,6 +45,7 @@ export default {
             editorial: "",
             idLibro1: "",
             titulo: "",
+            visible: false,
         }
     },
     created() {

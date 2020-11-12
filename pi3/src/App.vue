@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div id="nav">
+    <div id="nav" bottom="0">
         <router-link to="/">Lista de Libros</router-link> |
         <router-link to="/create">Crear Libros</router-link>
     </div>
@@ -19,6 +19,7 @@
 
 #nav {
     padding: 30px;
+
 }
 
 #nav a {
@@ -27,6 +28,10 @@
 }
 
 #nav a.router-link-exact-active {
-    color: #42b983;
+    color: white;
+}
+
+body {
+    background-color: #92a8d1;
 }
 </style>

@@ -3,14 +3,29 @@
     <h1>Bienvenido a la biblioteca de Oliver</h1>
     <h2>Estos son los libros en la biblioteca: </h2>
     <ul>
-        <li v-for="libros in librosArray" :key="libros.id">
-            Titulo: "{{libros.titulo}}", Autor: {{libros.autor}} -
-            Clasificacion: {{libros.clasificacion}} - Editorial: {{libros.editorial}}
-            ID: {{libros.idlibro}}
-            -
-
-            <router-link :to="{ name: 'EditarL', params: { id: libros.id}}"> Editar Libro</router-link>
-        </li>
+        <table align="center">
+            <tbody>
+                <li v-for="libros in librosArray" :key="libros.id">
+                    <td>
+                        Titulo: "{{libros.titulo}}" -
+                    </td>
+                    <td>
+                        Autor: {{libros.autor}} -
+                    </td>
+                    <td>
+                        Clasificacion: {{libros.clasificacion}} -
+                    </td>
+                    <td>
+                        Editorial: {{libros.editorial}} -
+                    </td>
+                    <td>
+                        ID: {{libros.idlibro}} -
+                    </td>
+                    <router-link :to="{ name: 'EditarL', params: { id: libros.id}}"> Editar Libro</router-link>
+                    <hr>
+                </li>
+            </tbody>
+        </table>
     </ul>
 
 </div>
